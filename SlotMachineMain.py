@@ -23,22 +23,22 @@ def asciiText(text):
 
 
 def displayRoll(symbols):
-  for i in range(0,2):
+  for i in range(len(symbols)):
     if symbols[i] == 5:
       time.sleep(1)
-      return symbolsSigns[4]
+      print(symbolsSigns[4])
     elif symbols[i] == 4:
       time.sleep(1)
-      return symbolsSigns[3]
+      print(symbolsSigns[3])
     elif symbols[i] == 3:
       time.sleep(1)
-      return symbolsSigns[2]
+      print(symbolsSigns[2])
     elif symbols[i] == 2:
       time.sleep(1)
-      return symbolsSigns[1]
+      print(symbolsSigns[1])
     elif symbols[i] == 1:
       time.sleep(1)
-      return symbolsSigns[0]
+      print(symbolsSigns[0])
 
 def rollSymbols():
   #rolls random symbols
@@ -77,7 +77,7 @@ def main():
   else:
     symbols = rollSymbols()
     print(symbols)
-    print(displayRoll(symbols))
+    todisplay = displayRoll(symbols)
     
     
 #intro

@@ -11,7 +11,7 @@ import sys #exits code
 #🍌= 3 
 #💲= 4
 #💀= 5
-
+symbolsSigns = ["🔔","🍒","🍌","💲","💀"]
 #set coins value 
 Coins = 100
 
@@ -20,6 +20,25 @@ def asciiText(text):
   #creates ascii text
   result = pyfiglet.figlet_format(text)
   print(Fore.RED+ result)
+
+
+def displayRoll(symbols):
+  for i in range(0,2):
+    if symbols[i] == 5:
+      time.sleep(1)
+      return symbolsSigns[4]
+    elif symbols[i] == 4:
+      time.sleep(1)
+      return symbolsSigns[3]
+    elif symbols[i] == 3:
+      time.sleep(1)
+      return symbolsSigns[2]
+    elif symbols[i] == 2:
+      time.sleep(1)
+      return symbolsSigns[1]
+    elif symbols[i] == 1:
+      time.sleep(1)
+      return symbolsSigns[0]
 
 def rollSymbols():
   #rolls random symbols
@@ -55,6 +74,10 @@ def main():
   #main game
   if Coins < 5:
     print(Fore.RED + "You do not have enough money please leave")
+  else:
+    symbols = rollSymbols()
+    print(symbols)
+    print(displayRoll(symbols))
     
     
 #intro

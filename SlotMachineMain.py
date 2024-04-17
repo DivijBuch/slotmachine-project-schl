@@ -85,6 +85,9 @@ def main():
         #player would not like to spin
         while True:
           cashOut = str.upper(input("Would you like to cash out(yes or no): "))
+        break
+      else:
+        print("Please enter yes or no")    
       
     
 #intro

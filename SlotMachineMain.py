@@ -75,10 +75,7 @@ def main():
   if Coins < 5:
     print(Fore.RED + "You do not have enough money please leave")
   else:
-    symbols = rollSymbols()
-    print(symbols)
-    todisplay = displayRoll(symbols)
-    
+    print("Not done yet.")
     
 #intro
 asciiText("Welcome to the Slot Machine")

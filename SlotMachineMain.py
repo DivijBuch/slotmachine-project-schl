@@ -75,7 +75,17 @@ def main():
   if Coins < 5:
     print(Fore.RED + "You do not have enough money please leave")
   else:
-    print("Not done yet.")
+    while True:
+      liketoSpin = str.upper(input(Fore.WHITE + "Would you like to spin(yes or no): "))
+      if liketoSpin == "YES":
+        #code for like to spin
+        print("PLAYER WOULD LIKE TO SPIN")
+        break
+      elif liketoSpin == "NO":
+        #player would not like to spin
+        while True:
+          cashOut = str.upper(input("Would you like to cash out(yes or no): "))
+      
     
 #intro
 asciiText("Welcome to the Slot Machine")

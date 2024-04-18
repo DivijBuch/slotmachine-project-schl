@@ -85,6 +85,16 @@ def main():
         #player would not like to spin
         while True:
           cashOut = str.upper(input("Would you like to cash out(yes or no): "))
+          if cashOut == "YES":
+            print("NOT FINISHED YET")
+            #write file here 
+          elif cashOut == "NO":
+            print("Thank you for playing my Slot Machine")
+            time.sleep(1)
+            print("You earnt £", Coins ,"but didnt want to cash out")
+            time.sleep(1)
+            print("See you again soon")
+            sys.exit()
         break
       else:
         print("Please enter yes or no")    

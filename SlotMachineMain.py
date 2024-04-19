@@ -61,41 +61,72 @@ def calculateEarnings(symbols):
     return 500
   elif symbols.count(4) == 2:
     return 50
-  elif symbols.count(2) == 2 or symbols.count(3) == 2:
+  elif symbols.count(2) == 2:
     return 50
+  elif symbols.count(3) == 2:
+    return
   elif symbols.count(2) == 2 and symbols.count(4) == 1:
     return 51
   elif symbols.count(3) == 2 and symbols.count(4) == 1:
     return 51
   elif symbols.count(4) == 1:
     return 1
+  else:
+    raise(ValueError(symbols))
+
+def rerungame():
+  main()
 
 def main():
   #main game
+  global Coins
   if Coins < 5:
     print(Fore.RED + "You do not have enough money please leave")
+    sys.exit()
   else:
     while True:
       liketoSpin = str.upper(input(Fore.WHITE + "Would you like to spin(yes or no): "))
       if liketoSpin == "YES":
         #code for like to spin
-        print("PLAYER WOULD LIKE TO SPIN")
+        Coins = Coins - 5
+        print(f'£5 was taken away you now have £{Coins}')
+        symbols = rollSymbols()
+        earnings = calculateEarnings(symbols)
+        print(type(earnings))
+        displayRoll(symbols)
+        time.sleep(1)
+        print(f'You earnt £{earnings}')
+        Coins = Coins + earnings
+        time.sleep(1)
+        print(f'You know have £{Coins}')
+        rerungame()
         break
       elif liketoSpin == "NO":
         #player would not like to spin
         while True:
           cashOut = str.upper(input("Would you like to cash out(yes or no): "))
           if cashOut == "YES":
-            print("NOT FINISHED YET")
-            #write file here 
+            #write file
+            name = str(input("What is your name: "))
+            highscores = open("highscore.txt","a")
+            highscores.write(f'{name}: {Coins} \n')
+            highscores.close()
+            print("Thank you for playing Divij's Slot Machine")
+            time.sleep(1)
+            print("Your high score has been added")
+            time.sleep(1)
+            print("You earnt £",Coins)
+            time.sleep(1)
+            print("Have a nice day. See you again soon!")
+            sys.exit()
           elif cashOut == "NO":
-            print("Thank you for playing my Slot Machine")
+            #no write file
+            print("Thank you for playing Divij's Slot Machine")
             time.sleep(1)
             print("You earnt £", Coins ,"but didnt want to cash out")
             time.sleep(1)
             print("See you again soon")
             sys.exit()
-        break
       else:
         print("Please enter yes or no")    
       
@@ -112,4 +143,4 @@ highscores = open("highscores.txt", "rt")
 print(highscores.read())
 highscores.close()
 #calls main function
-main()
+rerungame()

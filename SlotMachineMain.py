@@ -71,10 +71,8 @@ def calculateEarnings(symbols):
     return 51
   elif symbols.count(4) == 1:
     return 1
-  else:
-    raise(ValueError(symbols))
 
-def rerungame():
+
   main()
 
 def main():
@@ -94,12 +92,10 @@ def main():
         earnings = calculateEarnings(symbols)
         print(type(earnings))
         displayRoll(symbols)
-        time.sleep(1)
-        print(f'You earnt £{earnings}')
         Coins = Coins + earnings
-        time.sleep(1)
+        print(f'You earnt £{earnings}')
         print(f'You know have £{Coins}')
-        rerungame()
+        main()
         break
       elif liketoSpin == "NO":
         #player would not like to spin
@@ -143,4 +139,4 @@ highscores = open("highscores.txt", "rt")
 print(highscores.read())
 highscores.close()
 #calls main function
-rerungame()
+main()

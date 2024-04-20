@@ -89,7 +89,6 @@ def main():
         print(f'£5 was taken away you now have £{Coins}')
         symbols = rollSymbols()
         earnings = calculateEarnings(symbols)
-        print(type(earnings))
         displayRoll(symbols)
         time.sleep(1)
         print(f'You earnt £{earnings}')

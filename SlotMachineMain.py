@@ -89,7 +89,6 @@ def main():
         print(f'£5 was taken away you now have £{Coins}')
         symbols = rollSymbols()
         earnings = calculateEarnings(symbols)
-        print(type(earnings))
         displayRoll(symbols)
         time.sleep(1)
         print(f'You earnt £{earnings}')
@@ -114,13 +113,13 @@ def main():
             time.sleep(1)
             print(f'You earnt £{Coins}')
             time.sleep(1)
-            print("Thank you for playing Divij's slot machine. See you again soon!")
+            print("Thank you for playing Divij's Slot Machine. See you again soon!")
             time.sleep(1)
             break
           elif cashOut == "NO":
             print(f'You earnt £{Coins} but did not want to cash out')
             time.sleep(1)
-            print("Thank you for playing Divij's slot machine. See you again soon!")
+            print("Thank you for playing Divij's Slot Machine. See you again soon!")
             time.sleep(1)
             break
           else:
@@ -134,9 +133,13 @@ def main():
 #intro
 asciiText("Welcome to the Slot Machine")
 print(Fore.WHITE + "-"*30)
+time.sleep(1)
 print(Fore.GREEN + "Game enjoyed best in full screen")
+time.sleep(1)
 print("Each spin costs 5 coins")
+time.sleep(1)
 print("Made by Divij")
+time.sleep(1)
 print(Fore.RED + "HIGH SCORES")
 print("-"*30)
 highscores = open("highscore.txt", "rt")

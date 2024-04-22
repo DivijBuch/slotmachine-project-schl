@@ -1,4 +1,0 @@
-bob: 100 
-Divij: 100 
-Divij: 112 
-Ayan: 183 
